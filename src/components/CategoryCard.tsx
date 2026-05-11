@@ -5,8 +5,8 @@ export interface Category {
   id:          string;
   slug:        string;
   name:        string;
-  description: string;
-  icon_name:   string;
+  description: string | null;
+  icon_name:   string | null;
   tool_count:  number;
 }
 

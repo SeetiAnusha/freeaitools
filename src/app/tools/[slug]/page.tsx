@@ -277,7 +277,7 @@ export default async function ToolPage(
                   professional-grade AI capabilities without a subscription.
                 </p>
                 <p>
-                  Whether you're just getting started with AI tools or looking to replace an expensive
+                  Whether you&apos;re just getting started with AI tools or looking to replace an expensive
                   paid solution, {tool.name} is worth exploring. The tool is continuously updated and
                   has an active user community.
                 </p>

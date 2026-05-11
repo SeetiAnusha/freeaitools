@@ -97,7 +97,6 @@ if (
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const supabase: SupabaseClient<any> = createClient(supabaseUrl, supabaseAnonKey);
 
 // ============================================================
@@ -115,7 +114,6 @@ export async function getCategories(): Promise<Category[]> {
   if (error) throw new Error(`getCategories: ${error.message}`);
 
   // Map the result: Supabase returns tools as [{ count: N }]
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return ((data ?? []) as any[]).map((c) => ({
     id:          c.id,
     slug:        c.slug,

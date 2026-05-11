@@ -66,7 +66,7 @@ export default function CookieConsent() {
         <div className="mb-4 space-y-2 text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-800 rounded-xl p-3">
           <p><strong className="text-gray-700 dark:text-gray-300">Essential:</strong> Always active — needed for the site to work.</p>
           <p><strong className="text-gray-700 dark:text-gray-300">Analytics:</strong> Help us understand how you use the site (Google Analytics).</p>
-          <p><strong className="text-gray-700 dark:text-gray-300">Marketing:</strong> Not used — we don't run ad tracking.</p>
+          <p><strong className="text-gray-700 dark:text-gray-300">Marketing:</strong> Not used — we don&apos;t run ad tracking.</p>
         </div>
       )}
 
