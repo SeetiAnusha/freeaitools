@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import CookieConsent from "@/components/CookieConsent";
+import GoogleAdsense from "@/components/GoogleAdsense";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -122,6 +123,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        {/* Google AdSense - Will activate when you add your ID */}
+        <GoogleAdsense />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
