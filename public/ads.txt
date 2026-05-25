@@ -1,0 +1,9 @@
+# ads.txt file for FreeAIHub
+# This file is REQUIRED by Google AdSense
+# It verifies you own this website and authorizes Google to show ads
+
+# Google AdSense
+google.com, pub-4406313798832895, DIRECT, f08c47fec0942fa0
+
+# IMPORTANT: After AdSense approval, Google may ask you to add more lines here.
+# Always keep this file updated as per Google's instructions.
