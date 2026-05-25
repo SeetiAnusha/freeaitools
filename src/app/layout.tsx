@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAdsense from "@/components/GoogleAdsense";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://freeaihub.io"),
+  metadataBase: new URL("https://freeaitools-xi.vercel.app"),
   title: {
     default: "FreeAIHub — 1000+ Free AI Tools Directory",
     template: "%s | FreeAIHub",
@@ -28,14 +29,20 @@ export const metadata: Metadata = {
     "free AI writing tools",
     "free AI image generators",
     "AI tools for students",
+    "ChatGPT alternatives",
+    "free AI chatbot",
+    "AI tools no credit card",
   ],
   authors: [{ name: "FreeAIHub Team" }],
   creator: "FreeAIHub",
   publisher: "FreeAIHub",
+  verification: {
+    google: "google-site-verification-code-here",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://freeaihub.io",
+    url: "https://freeaitools-xi.vercel.app",
     siteName: "FreeAIHub",
     title: "FreeAIHub — 1000+ Free AI Tools Directory",
     description:
@@ -91,13 +98,13 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "FreeAIHub",
-  url: "https://freeaihub.io",
+  url: "https://freeaitools-xi.vercel.app",
   description: "Discover 1000+ free AI tools across 40 categories",
   potentialAction: {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://freeaihub.io/search?q={search_term_string}",
+      urlTemplate: "https://freeaitools-xi.vercel.app/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
@@ -107,8 +114,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "FreeAIHub",
-  url: "https://freeaihub.io",
-  logo: "https://freeaihub.io/logo.png",
+  url: "https://freeaitools-xi.vercel.app",
+  logo: "https://freeaitools-xi.vercel.app/logo.png",
   sameAs: [
     "https://twitter.com/FreeAIHub",
     "https://linkedin.com/company/freeaihub",
@@ -123,10 +130,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        {/* Google AdSense - Will activate when you add your ID */}
+        {/* Google AdSense - CRITICAL for monetization */}
         <GoogleAdsense />
         
-        {/* Structured Data */}
+        {/* Google Analytics - Recommended for AdSense approval */}
+        <GoogleAnalytics />
+        
+        {/* Preconnect to Google services for better performance */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        
+        {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
