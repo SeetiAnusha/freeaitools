@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllToolSlugs, getAllCategorySlugs } from '@/lib/supabase';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://freeaihub.io';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aifreetoolshub.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [toolSlugs, categorySlugs] = await Promise.all([

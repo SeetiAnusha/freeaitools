@@ -55,9 +55,9 @@ export default async function CategoryPage(
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freeaihub.io' },
-      { '@type': 'ListItem', position: 2, name: 'Categories', item: 'https://freeaihub.io/#categories' },
-      { '@type': 'ListItem', position: 3, name: category.name, item: `https://freeaihub.io/category/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aifreetoolshub.com' },
+      { '@type': 'ListItem', position: 2, name: 'Categories', item: 'https://aifreetoolshub.com/#categories' },
+      { '@type': 'ListItem', position: 3, name: category.name, item: `https://aifreetoolshub.com/category/${slug}` },
     ],
   };
 
@@ -70,7 +70,7 @@ export default async function CategoryPage(
       '@type': 'ListItem',
       position: i + 1,
       name: tool.name,
-      url: `https://freeaihub.io/tools/${tool.slug}`,
+      url: `https://aifreetoolshub.com/tools/${tool.slug}`,
     })),
   };
 

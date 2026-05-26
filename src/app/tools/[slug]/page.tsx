@@ -115,9 +115,9 @@ export default async function ToolPage(
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freeaihub.io' },
-      ...(category ? [{ '@type': 'ListItem', position: 2, name: category.name, item: `https://freeaihub.io/category/${category.slug}` }] : []),
-      { '@type': 'ListItem', position: category ? 3 : 2, name: tool.name, item: `https://freeaihub.io/tools/${slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aifreetoolshub.com' },
+      ...(category ? [{ '@type': 'ListItem', position: 2, name: category.name, item: `https://aifreetoolshub.com/category/${category.slug}` }] : []),
+      { '@type': 'ListItem', position: category ? 3 : 2, name: tool.name, item: `https://aifreetoolshub.com/tools/${slug}` },
     ],
   };
 

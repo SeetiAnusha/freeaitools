@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
                     <p className="text-gray-900 dark:text-white font-semibold mb-2">FreeAIHub</p>
                     <p className="text-gray-600 dark:text-gray-400 text-sm space-y-1">
                       <span className="block">Email: <a href="mailto:privacy@freeaihub.io" className="text-blue-600 dark:text-blue-400 hover:underline">privacy@freeaihub.io</a></span>
-                      <span className="block">Website: <a href="https://freeaihub.io" className="text-blue-600 dark:text-blue-400 hover:underline">https://freeaihub.io</a></span>
+                      <span className="block">Website: <a href="https://aifreetoolshub.com" className="text-blue-600 dark:text-blue-400 hover:underline">https://freeaihub.io</a></span>
                     </p>
                   </div>
                 </div>

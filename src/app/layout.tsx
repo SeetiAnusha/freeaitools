@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://freeaitools-xi.vercel.app"),
+  metadataBase: new URL("https://aifreetoolshub.com"),
   title: {
     default: "FreeAIHub — 1000+ Free AI Tools Directory",
     template: "%s | FreeAIHub",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://freeaitools-xi.vercel.app",
+    url: "https://aifreetoolshub.com",
     siteName: "FreeAIHub",
     title: "FreeAIHub — 1000+ Free AI Tools Directory",
     description:
@@ -98,7 +98,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "FreeAIHub",
-  url: "https://freeaitools-xi.vercel.app",
+  url: "https://aifreetoolshub.com",
   description: "Discover 1000+ free AI tools across 40 categories",
   potentialAction: {
     "@type": "SearchAction",
@@ -114,7 +114,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "FreeAIHub",
-  url: "https://freeaitools-xi.vercel.app",
+  url: "https://aifreetoolshub.com",
   logo: "https://freeaitools-xi.vercel.app/logo.png",
   sameAs: [
     "https://twitter.com/FreeAIHub",

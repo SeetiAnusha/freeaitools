@@ -14,10 +14,10 @@ import Script from 'next/script';
 
 export default function GoogleAnalytics() {
   // Replace with your Google Analytics Measurement ID
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  const GA_MEASUREMENT_ID = 'G-68S6G748NM';
   
   // Don't load in development or if ID not set
-  if (process.env.NODE_ENV === 'development' || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+  if (process.env.NODE_ENV === 'development' || GA_MEASUREMENT_ID === 'G-68S6G748NM') {
     return null;
   }
 
