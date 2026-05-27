@@ -8,7 +8,7 @@ import { Search, ArrowRight, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Search Free AI Tools — FreeAIHub',
-  description: 'Search 1000+ verified free AI tools. Find the best free AI for writing, coding, image generation, video, and more.',
+  description: 'Search verified free AI tools. Find the best free AI for writing, coding, image generation, video, and more.',
 };
 
 export default async function SearchPage({
@@ -59,7 +59,7 @@ export default async function SearchPage({
                   type="search"
                   name="q"
                   defaultValue={query}
-                  placeholder="Search 1000+ free AI tools..."
+                  placeholder="Search free AI tools..."
                   autoFocus
                   className="w-full pl-11 pr-4 py-3 rounded-xl bg-white dark:bg-gray-900
                              text-gray-900 dark:text-white placeholder-gray-400

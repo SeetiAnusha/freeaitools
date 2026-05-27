@@ -15,16 +15,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aifreetoolshub.com"),
   title: {
-    default: "FreeAIHub — 1000+ Free AI Tools Directory",
+    default: "FreeAIHub — Free AI Tools Directory",
     template: "%s | FreeAIHub",
   },
   description:
-    "Discover 1000+ free AI tools across 40 categories. Find the best free AI tools for writing, image generation, video creation, coding, and more — all verified free.",
+    "Discover free AI tools across 40+ categories. Find the best free AI tools for writing, image generation, video creation, coding, and more — all verified free.",
   keywords: [
     "free AI tools",
     "AI tools directory",
     "free artificial intelligence",
-    "best free AI tools 2024",
+    "best free AI tools 2026",
     "AI tools list",
     "free AI writing tools",
     "free AI image generators",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://aifreetoolshub.com",
     siteName: "FreeAIHub",
-    title: "FreeAIHub — 1000+ Free AI Tools Directory",
+    title: "FreeAIHub — Free AI Tools Directory",
     description:
-      "Discover 1000+ free AI tools across 40 categories. All tools verified free.",
+      "Discover free AI tools across 40+ categories. All tools verified free.",
     images: [
       {
         url: "/og-image.png",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@FreeAIHub",
     creator: "@FreeAIHub",
-    title: "FreeAIHub — 1000+ Free AI Tools Directory",
-    description: "Discover 1000+ free AI tools across 40 categories.",
+    title: "FreeAIHub — Free AI Tools Directory",
+    description: "Discover free AI tools across 40+ categories.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -99,7 +99,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "FreeAIHub",
   url: "https://aifreetoolshub.com",
-  description: "Discover 1000+ free AI tools across 40 categories",
+  description: "Discover free AI tools across 40+ categories",
   potentialAction: {
     "@type": "SearchAction",
     target: {

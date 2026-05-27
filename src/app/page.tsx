@@ -18,12 +18,12 @@ import type { Tool } from "@/components/ToolCard";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "FreeAIHub — Discover 1000+ Free AI Tools Directory",
+  title: "FreeAIHub — Discover Free AI Tools Directory",
   description:
     "Find the best free AI tools across 40 categories. All tools verified free — image generation, writing, coding, video, voice, and more. Updated daily.",
   openGraph: {
-    title: "FreeAIHub — 1000+ Free AI Tools Directory",
-    description: "Discover 1000+ free AI tools across 40 categories. Verified free.",
+    title: "FreeAIHub — Free AI Tools Directory",
+    description: "Discover free AI tools across 40 categories. Verified free.",
   },
 };
 
@@ -87,11 +87,11 @@ export default async function HomePage() {
     // categories and featuredTools remain empty arrays — page still renders
   }
 
-  // Dynamically compute total tools count from DB data
+  // Dynamically compute total tools count from DB data - SHOWS REAL NUMBERS
   const totalTools = categories.reduce((sum, c) => sum + c.tool_count, 0);
 
   const STATS = [
-    { value: totalTools > 0 ? `${totalTools.toLocaleString()}+` : "1,000+", label: "Free AI Tools",   icon: Zap },
+    { value: totalTools > 0 ? `${totalTools.toLocaleString()}` : "141", label: "Free AI Tools",   icon: Zap },
     { value: totalCategories > 0 ? String(totalCategories)      : "40",     label: "Categories",       icon: TrendingUp },
     { value: "100%",                                                          label: "Verified Free",    icon: Shield },
     { value: "4.8★",                                                          label: "Avg Rating",       icon: Star },
@@ -108,22 +108,22 @@ export default async function HomePage() {
 
           <div className="container-xl relative z-10 py-20 text-center">
 
-            {/* Trust pill */}
+            {/* Trust pill - REMOVED FAKE NUMBERS */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
                             bg-white/10 backdrop-blur-sm border border-white/20
                             text-white/90 text-sm font-medium mb-8 animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Trusted by 500,000+ AI enthusiasts worldwide
+              Curated by AI experts — Updated daily
             </div>
 
-            {/* Heading */}
+            {/* Heading - SHOWS REAL COUNT FROM DATABASE */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white
                            leading-[1.1] mb-6 animate-slide-up">
               Discover{" "}
               <span className="relative inline-block">
                 <span className="text-transparent bg-clip-text
                                  bg-gradient-to-r from-yellow-300 to-amber-300">
-                  {totalTools > 0 ? `${totalTools.toLocaleString()}+ Free AI Tools` : "1000+ Free AI Tools"}
+                  {totalTools > 0 ? `${totalTools.toLocaleString()}+ Free AI Tools` : "Free AI Tools"}
                 </span>
               </span>
               <br className="hidden sm:block" />
@@ -369,7 +369,7 @@ export default async function HomePage() {
                 {
                   icon: "⚡",
                   title: "Updated Daily",
-                  desc: "We monitor 1000+ tools daily. When a tool changes its pricing, we update or remove it within 24 hours.",
+                  desc: "We monitor all tools daily. When a tool changes its pricing, we update or remove it within 24 hours.",
                 },
                 {
                   icon: "🏆",
@@ -414,7 +414,7 @@ export default async function HomePage() {
                 Get the Best Free AI Tools Weekly
               </h2>
               <p className="text-blue-100 mb-8 text-lg">
-                10,000+ subscribers get our curated list of the newest and best free AI tools every week.
+                Join our growing community and get curated lists of the newest and best free AI tools every week.
                 No spam. Unsubscribe anytime.
               </p>
               <NewsletterForm

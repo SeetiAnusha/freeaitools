@@ -1,7 +1,7 @@
 {
   "name": "FreeAIHub",
   "short_name": "FreeAIHub",
-  "description": "Discover 1000+ free AI tools across 40 categories",
+  "description": "Discover free AI tools across 40+ categories",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e3a8a",

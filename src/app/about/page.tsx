@@ -141,30 +141,30 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Stats */}
+        {/* Stats - Updated to remove fake numbers for AdSense compliance */}
         <section className="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-black text-center mb-12">FreeAIHub by the Numbers</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               
               <div className="text-center">
-                <div className="text-5xl font-black mb-2">1,000+</div>
-                <div className="text-blue-100 text-sm font-medium">Free AI Tools</div>
-              </div>
-
-              <div className="text-center">
-                <div className="text-5xl font-black mb-2">40</div>
+                <div className="text-5xl font-black mb-2">40+</div>
                 <div className="text-blue-100 text-sm font-medium">Categories</div>
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black mb-2">500K+</div>
-                <div className="text-blue-100 text-sm font-medium">Monthly Visitors</div>
+                <div className="text-5xl font-black mb-2">100%</div>
+                <div className="text-blue-100 text-sm font-medium">Verified Free</div>
               </div>
 
               <div className="text-center">
-                <div className="text-5xl font-black mb-2">10K+</div>
-                <div className="text-blue-100 text-sm font-medium">Newsletter Subscribers</div>
+                <div className="text-5xl font-black mb-2">Daily</div>
+                <div className="text-blue-100 text-sm font-medium">Updates</div>
+              </div>
+
+              <div className="text-center">
+                <div className="text-5xl font-black mb-2">Manual</div>
+                <div className="text-blue-100 text-sm font-medium">Verification</div>
               </div>
 
             </div>

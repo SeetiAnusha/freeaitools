@@ -59,7 +59,7 @@ export default function Footer() {
                 🚀 Get new free AI tools weekly
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Join 10,000+ subscribers. No spam, just the best free AI tools delivered to your inbox.
+                No spam, just the best free AI tools delivered to your inbox every week.
               </p>
             </div>
             <NewsletterForm
@@ -114,19 +114,19 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Stats */}
+            {/* Stats - Removed hardcoded numbers for AdSense compliance */}
             <div className="flex gap-4 mt-5">
               <div>
-                <div className="text-2xl font-black text-brand-600">1000+</div>
-                <div className="text-xs text-gray-500">AI Tools</div>
-              </div>
-              <div>
-                <div className="text-2xl font-black text-brand-600">40</div>
+                <div className="text-2xl font-black text-brand-600">40+</div>
                 <div className="text-xs text-gray-500">Categories</div>
               </div>
               <div>
                 <div className="text-2xl font-black text-brand-600">100%</div>
                 <div className="text-xs text-gray-500">Free</div>
+              </div>
+              <div>
+                <div className="text-2xl font-black text-brand-600">Daily</div>
+                <div className="text-xs text-gray-500">Updates</div>
               </div>
             </div>
           </div>

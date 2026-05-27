@@ -12,9 +12,9 @@ import { Filter, Search, Layers } from 'lucide-react';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'All Free AI Tools — Browse 1000+ Verified Free AI Tools',
+  title: 'All Free AI Tools — Browse Verified Free AI Tools',
   description:
-    'Browse all free AI tools across 40 categories. Every tool verified free — no hidden paywalls, no credit card required. Updated daily.',
+    'Browse all free AI tools across 40+ categories. Every tool verified free — no hidden paywalls, no credit card required. Updated daily.',
   alternates: { canonical: '/tools' },
 };
 

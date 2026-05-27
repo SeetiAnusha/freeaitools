@@ -10,12 +10,12 @@ const POSTS: Record<string, {
   title: string; excerpt: string; date: string; readTime: string;
   category: string; content: string[];
 }> = {
-  '10-best-free-ai-writing-tools-2024': {
-    title: '10 Best Free AI Writing Tools in 2024 (Tested & Ranked)',
+  '10-best-free-ai-writing-tools-2026': {
+    title: '10 Best Free AI Writing Tools in 2026 (Tested & Ranked)',
     excerpt: 'We tested 30+ AI writing tools and ranked the best ones with a genuine free tier.',
-    date: '2024-12-01', readTime: '8 min read', category: 'Guides',
+    date: '2026-05-20', readTime: '8 min read', category: 'Guides',
     content: [
-      'AI writing tools have exploded in 2024. But most charge after a short trial. We tested 30+ tools and found 10 with a genuinely free tier — no credit card, no tricks.',
+      'AI writing tools continue to evolve rapidly in 2026. But most charge after a short trial. We tested 30+ tools and found 10 with a genuinely free tier — no credit card, no tricks.',
       '## 1. ChatGPT (Free — GPT-3.5)\nOpenAI\'s ChatGPT remains the gold standard for free AI writing. The free plan gives unlimited access to GPT-3.5, which handles most writing tasks with ease. It\'s excellent for drafting emails, blog posts, social captions, and more.',
       '## 2. Claude by Anthropic (Free — Claude 3 Haiku)\nAnthropic\'s Claude offers free access to Claude 3 Haiku. It excels at long-form writing, nuanced analysis, and maintaining consistent tone across long documents.',
       '## 3. Google Gemini (Free — Gemini Flash)\nGemini is Google\'s answer to ChatGPT. The free tier uses Gemini 1.5 Flash and integrates with Google Docs and Gmail for a seamless writing experience.',
@@ -25,9 +25,9 @@ const POSTS: Record<string, {
     ],
   },
   'chatgpt-vs-claude-free-tier-comparison': {
-    title: 'ChatGPT vs Claude: Which Free Tier is Better in 2024?',
+    title: 'ChatGPT vs Claude: Which Free Tier is Better in 2026?',
     excerpt: 'A head-to-head comparison of ChatGPT and Claude free plans.',
-    date: '2024-11-28', readTime: '6 min read', category: 'Comparisons',
+    date: '2026-05-15', readTime: '6 min read', category: 'Comparisons',
     content: [
       'Both ChatGPT and Claude are excellent free AI assistants — but they have different strengths. Here\'s an honest comparison to help you choose.',
       '## Free Tier Limits\n**ChatGPT Free:** Unlimited GPT-3.5, limited GPT-4o messages per day.\n**Claude Free:** Unlimited Claude 3 Haiku, limited Claude 3.5 Sonnet messages per day.',

@@ -108,7 +108,7 @@ export function websiteSchema() {
     '@type': 'WebSite',
     name: 'FreeAIHub',
     url: BASE,
-    description: 'Discover 1000+ free AI tools across 40 categories.',
+    description: 'Discover free AI tools across 40+ categories.',
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: `${BASE}/search?q={search_term_string}` },
