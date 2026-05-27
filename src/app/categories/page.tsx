@@ -6,6 +6,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Grid3X3 } from 'lucide-react';
 
+// Enable ISR: Revalidate this page every 60 seconds
+// Category list and tool counts will update automatically!
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'All 40 Free AI Tool Categories',
   description: 'Browse all 40 categories of free AI tools. Image generation, writing, coding, video, voice, design — all verified free.',

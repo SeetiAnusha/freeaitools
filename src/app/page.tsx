@@ -13,6 +13,10 @@ import type { Tool as DBTool, Category as DBCategory } from "@/lib/supabase";
 import type { Category } from "@/components/CategoryCard";
 import type { Tool } from "@/components/ToolCard";
 
+// Enable ISR: Revalidate this page every 60 seconds
+// This means new tools will appear automatically within 1 minute!
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: "FreeAIHub — Discover 1000+ Free AI Tools Directory",
   description:

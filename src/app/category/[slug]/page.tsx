@@ -13,6 +13,10 @@ import ToolCard from '@/components/ToolCard';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+// Enable ISR: Revalidate this page every 60 seconds
+// New tools added to this category will appear automatically within 1 minute!
+export const revalidate = 60;
+
 /* ── Static Params ──────────────────────────────────────────── */
 export async function generateStaticParams() {
   const slugs = await getAllCategorySlugs();

@@ -7,6 +7,10 @@ import Footer from '@/components/Footer';
 import ToolCard from '@/components/ToolCard';
 import { Filter, Search, Layers } from 'lucide-react';
 
+// Enable ISR: Revalidate this page every 60 seconds
+// All tools list will update automatically when new tools are added!
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'All Free AI Tools — Browse 1000+ Verified Free AI Tools',
   description:

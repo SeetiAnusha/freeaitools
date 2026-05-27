@@ -17,6 +17,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ToolCard from '@/components/ToolCard';
 
+// Enable ISR: Revalidate this page every 60 seconds
+// Tool details will update automatically within 1 minute!
+export const revalidate = 60;
+
 /* ── Static Params ──────────────────────────────────────────── */
 export async function generateStaticParams() {
   const slugs = await getAllToolSlugs();
