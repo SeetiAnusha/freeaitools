@@ -75,6 +75,63 @@ export type NewsletterSubscriber = {
   created_at: string;
 };
 
+export type BlogPost = {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  author_name: string;
+  published_date: string;
+  read_time: string;
+  featured: boolean;
+  seo_title: string | null;
+  seo_description: string | null;
+  seo_keywords: string[] | null;
+  views_count: number;
+  shares_count: number;
+  status: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type Prompt = {
+  id: string;
+  slug: string;
+  title: string;
+  prompt_text: string;
+  description: string;
+  category: string;
+  use_case: string | null;
+  ai_tool: string;
+  tags: string[];
+  is_free: boolean;
+  price: number | null;
+  difficulty_level: string;
+  example_input: string | null;
+  example_output: string | null;
+  instructions: string | null;
+  usage_count: number;
+  rating_avg: number;
+  rating_count: number;
+  seo_title: string | null;
+  seo_description: string | null;
+  status: string;
+  featured: boolean;
+  created_at: string;
+  updated_at: string;
+};
+
+export type PromptRating = {
+  id: string;
+  prompt_id: string;
+  ip_hash: string;
+  rating: number;
+  comment: string | null;
+  created_at: string;
+};
+
 // ============================================================
 // Supabase client — untyped generic to avoid "never" inference
 // issues with manually-written Database types. Each helper
@@ -226,4 +283,194 @@ export async function subscribeToNewsletter(
     return { success: false, message: 'Something went wrong. Please try again.' };
   }
   return { success: true, message: 'Welcome! You are now subscribed.' };
+}
+
+// ============================================================
+// BLOG POST QUERIES
+// ============================================================
+
+/** Get all published blog posts, ordered by date */
+export async function getBlogPosts(limit?: number): Promise<BlogPost[]> {
+  let query = supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('status', 'published')
+    .order('published_date', { ascending: false });
+  
+  if (limit) query = query.limit(limit);
+  
+  const { data, error } = await query;
+  if (error) throw new Error(`getBlogPosts: ${error.message}`);
+  return (data ?? []) as BlogPost[];
+}
+
+/** Get single blog post by slug */
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('slug', slug)
+    .eq('status', 'published')
+    .single();
+  
+  if (error) return null;
+  
+  // Increment view count (fire and forget)
+  supabase.rpc('increment_blog_views', { post_slug: slug }).then();
+  
+  return data as BlogPost;
+}
+
+/** Get all blog post slugs for static generation */
+export async function getAllBlogPostSlugs(): Promise<string[]> {
+  const { data } = await supabase
+    .from('blog_posts')
+    .select('slug')
+    .eq('status', 'published');
+  return ((data ?? []) as { slug: string }[]).map((p) => p.slug);
+}
+
+/** Get featured blog posts */
+export async function getFeaturedBlogPosts(limit = 3): Promise<BlogPost[]> {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('status', 'published')
+    .eq('featured', true)
+    .order('published_date', { ascending: false })
+    .limit(limit);
+  
+  if (error) throw new Error(`getFeaturedBlogPosts: ${error.message}`);
+  return (data ?? []) as BlogPost[];
+}
+
+/** Get blog posts by category */
+export async function getBlogPostsByCategory(category: string): Promise<BlogPost[]> {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('status', 'published')
+    .eq('category', category)
+    .order('published_date', { ascending: false });
+  
+  if (error) throw new Error(`getBlogPostsByCategory: ${error.message}`);
+  return (data ?? []) as BlogPost[];
+}
+
+/** Search blog posts */
+export async function searchBlogPosts(query: string): Promise<BlogPost[]> {
+  const { data, error } = await supabase.rpc('search_blog_posts', { query });
+  if (error) {
+    // Fallback search
+    const { data: fallback } = await supabase
+      .from('blog_posts')
+      .select('*')
+      .eq('status', 'published')
+      .ilike('title', `%${query}%`)
+      .limit(20);
+    return (fallback ?? []) as BlogPost[];
+  }
+  return (data ?? []) as BlogPost[];
+}
+
+// ============================================================
+// PROMPT QUERIES
+// ============================================================
+
+/** Get all prompts (free + paid) */
+export async function getPrompts(freeOnly = false, limit?: number): Promise<Prompt[]> {
+  let query = supabase
+    .from('prompts')
+    .select('*')
+    .eq('status', 'published')
+    .order('featured', { ascending: false })
+    .order('rating_avg', { ascending: false });
+  
+  if (freeOnly) query = query.eq('is_free', true);
+  if (limit) query = query.limit(limit);
+  
+  const { data, error } = await query;
+  if (error) throw new Error(`getPrompts: ${error.message}`);
+  return (data ?? []) as Prompt[];
+}
+
+/** Get single prompt by slug */
+export async function getPromptBySlug(slug: string): Promise<Prompt | null> {
+  const { data, error} = await supabase
+    .from('prompts')
+    .select('*')
+    .eq('slug', slug)
+    .eq('status', 'published')
+    .single();
+  
+  if (error) return null;
+  
+  // Increment usage count (fire and forget)
+  supabase.rpc('increment_prompt_usage', { prompt_slug: slug }).then();
+  
+  return data as Prompt;
+}
+
+/** Get all prompt slugs for static generation */
+export async function getAllPromptSlugs(): Promise<string[]> {
+  const { data } = await supabase
+    .from('prompts')
+    .select('slug')
+    .eq('status', 'published');
+  return ((data ?? []) as { slug: string }[]).map((p) => p.slug);
+}
+
+/** Get prompts by category */
+export async function getPromptsByCategory(category: string): Promise<Prompt[]> {
+  const { data, error } = await supabase
+    .from('prompts')
+    .select('*')
+    .eq('status', 'published')
+    .eq('category', category)
+    .order('rating_avg', { ascending: false });
+  
+  if (error) throw new Error(`getPromptsByCategory: ${error.message}`);
+  return (data ?? []) as Prompt[];
+}
+
+/** Get featured prompts */
+export async function getFeaturedPrompts(limit = 6): Promise<Prompt[]> {
+  const { data, error } = await supabase
+    .from('prompts')
+    .select('*')
+    .eq('status', 'published')
+    .eq('featured', true)
+    .order('rating_avg', { ascending: false })
+    .limit(limit);
+  
+  if (error) throw new Error(`getFeaturedPrompts: ${error.message}`);
+  return (data ?? []) as Prompt[];
+}
+
+/** Search prompts */
+export async function searchPrompts(query: string): Promise<Prompt[]> {
+  const { data, error } = await supabase.rpc('search_prompts', { query });
+  if (error) {
+    // Fallback search
+    const { data: fallback } = await supabase
+      .from('prompts')
+      .select('*')
+      .eq('status', 'published')
+      .ilike('title', `%${query}%`)
+      .limit(50);
+    return (fallback ?? []) as Prompt[];
+  }
+  return (data ?? []) as Prompt[];
+}
+
+/** Get unique prompt categories */
+export async function getPromptCategories(): Promise<string[]> {
+  const { data } = await supabase
+    .from('prompts')
+    .select('category')
+    .eq('status', 'published');
+  
+  const uniqueCategories = new Set((data ?? []).map((p: any) => p.category));
+  const categories = Array.from(uniqueCategories);
+  return categories.sort();
 }

@@ -165,6 +165,7 @@ export default function Header() {
             </div>
 
             <Link href="/blog" id="nav-blog" className="btn-ghost">Blog</Link>
+            <Link href="/prompts" id="nav-prompts" className="btn-ghost">Prompts</Link>
             <Link href="/submit-tool" id="nav-submit" className="btn-ghost">Submit Tool</Link>
           </nav>
 
@@ -258,6 +259,7 @@ export default function Header() {
             {[
               { href: "/categories", label: "All Categories" },
               { href: "/blog", label: "Blog" },
+              { href: "/prompts", label: "Prompts" },
               { href: "/submit-tool", label: "Submit Tool" },
               { href: "/saved", label: "Saved Tools" },
             ].map(({ href, label }) => (
